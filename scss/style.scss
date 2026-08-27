@@ -1,0 +1,1304 @@
+/*------------------------------------------------------------------
+* Project:        Photogen - Photography & Portfolio HTML Template
+* Author:         Htmldesigntemplates
+* URL:            https://themeforest.net/user/htmldesigntemplates/portfolio
+* Created:        10/10/2025
+-------------------------------------------------------------------*/
+
+/*
+Table Of Content
+
+1. Default CSS
+2. Header CSS
+3. Banner CSS
+4. Service CSS
+5. Project CSS
+6. Pricing CSS
+7. Review CSS
+8. Blog CSS
+9. Footer CSS
+10. Copyright CSS
+11. Index-2 CSS
+12. Index-3 CSS
+13. Service Page CSS
+14. Team Page CSS
+15. Career Detail Page CSS
+16. Faq page CSS
+17. Testimonial Page CSS
+18. Coming-Soon Page CSS
+19. Error Page CSS
+20. Product List CSS
+21. Product Detail CSS
+22. Portfolio Page CSS
+23. Portfolio Detail Page CSS
+24. Homepage 4 page CSS
+25. Client Gallery Page CSS
+
+*/
+
+
+// 1. Tools & helpers
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base styles
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/base.scss';
+
+@import 'components.scss';
+
+
+// Header CSS
+header {
+  .header-nav {
+    .navbar-nav{
+      .nav-link {
+        color: $white-color;
+        padding: 20px 15px;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      .nav-link.show, .nav-link.active {
+        color: $primary-color;
+      }
+      
+      .nav-item.no-after::after {
+        display: none;
+      }
+
+      .nav-item {
+        .dropdown-menu>li>a {
+          font-size: 16px;
+          padding: 13px 30px;
+          background-color: #FBFBFB;
+        }
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a.active{
+          background-color: $background-color1;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .header-icons {
+    ul li i {
+      font-size: 20px;
+    }
+  }
+}
+
+
+
+
+@media (min-width: 1180px) {
+  .navbar-nav .dropdown-menu{
+    position: absolute;
+    top: auto;
+  }
+
+  .dropdown-menu{
+    display: block;
+    opacity: 0;
+    visibility:hidden;
+  }
+
+  .dropdown:hover>.dropdown-menu {
+    opacity: 1 ;
+    visibility: visible;
+    transition:all .3s ease-in-out;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+  }
+
+  ul.dropdown-menu {
+    max-height: 630px !important; 
+    overflow-y: auto !important;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .dropdown-item.active{
+    background-color: $background-color2;
+  }
+}
+
+
+@media (max-width: 1180px){
+  div#slicknav-mobile, .dropdown-toggle::after  {
+    display: block;
+  }
+
+  .header-top, .mt_search ,.slicknav_nav .slicknav_arrow,  .navbar-button, .navbar-sticky-in, #responsive-menu {
+    display: none;
+  }
+
+  .slicknav_menu {
+    display: block;
+  }
+
+  .nav-link{
+    padding: 12px 36px !important;
+    margin: 0 !important;
+  }
+
+  .slicknav_btn{
+    position: absolute;
+    right: 70px;
+  }
+
+  .slicknav_btn.slicknav_open:before, .slicknav_btn.slicknav_collapsed:before {
+    left : 0;
+    top: 15px;
+    padding: 8px;
+    position: absolute;
+    color: $white-color;
+  }
+
+  .dropdown-menu {
+    border-radius: 0 !important;
+  }
+
+  .slicknav_btn.slicknav_open:before{
+    color: $primary-color;
+  }
+
+  .slicknav_nav {
+    top: 84px;
+    left: 0;
+    background-color: #F5F5F5;
+    position: absolute;
+    height: 280px;
+    overflow: auto;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+  } 
+
+  .slicknav_nav a:hover, li.nav-item.dropdown.slicknav_parent.slicknav_open > a > a {
+    background-color: $background-color2 !important;
+    color: #fff;
+  }
+
+  .slicknav_nav a, .dropdown-menu>li>a{
+    font-size: 16px;
+    background-color: #F5F5F5;
+    color: #33373d;
+    text-transform: capitalize !important;
+    border: none !important;
+    font-weight: 400 !important;
+  }
+
+  .dropdown-menu>li>a{
+    padding-left: 50px !important;
+    border-top: 1px solid #FBFBFB !important;
+  }
+  
+  .dropdown-toggle::after{
+    display: none;
+  }
+
+  .slicknav_nav .active, .fa-angle-up:before{
+    background-color: $background-color2;
+    color: #fff;
+  }
+
+  .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+  }
+  .header-icons {
+    margin-right: 500px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .slicknav_nav .slicknav_item a {
+      pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header .header-nav .header-logo img {
+    width: 160px;
+  }
+  .slicknav_btn.slicknav_open:before, .slicknav_btn.slicknav_collapsed:before {
+    top: 15px;
+  }
+  .slicknav_nav{
+    top: 72px;
+  }
+
+  .banner .slide-inner {
+    width: 100% !important;
+  }
+}
+
+
+// Banner CSS
+.banner, .breadcrumb {
+  margin-top: -96px;
+  cursor: grab;
+
+  .banner-slider {
+    .slide {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 750px;
+      p {
+        font-size: 17px;
+      }
+      .overlay {
+        background-color: #0E1316B3;
+      }
+      .slide-inner {
+        top: 122%;
+      }
+    }
+    .slide.slick-slide.slick-current.slick-active .slide-inner{
+      animation: bannerfadein 1.2s ease-out forwards;
+    }
+  }
+}
+
+.breadcrumb {
+  height: 440px;
+  background-image: url(../image/portrait-of-a-young-european-girl-with-long-hair-i-2022-01-05-22-12-29-utc.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .overlay {
+    background-color: #0E1316B3;
+  }
+}
+
+// Services CSS
+.services {
+
+  background-image: linear-gradient(90deg, $background-color2 0%, $secondary-color 100%);
+
+  .overlay {
+    background-image: linear-gradient(180deg, $background-color1 0%, $secondary-color 100%);
+    opacity: 0.5;
+  }
+  
+  .services-body {
+    .services-box {
+      
+      .overlay {
+        background-color: transparent;
+        background-image: linear-gradient(180deg, $primary-color 0%, $background-color1 100%);
+        opacity: 0.3;
+      }
+
+      &:hover .overlay {
+            filter: brightness(100%) contrast(100%) saturate(0%) blur(0px) hue-rotate(0deg);
+      }
+    }
+  }
+}
+
+// Projects CSS
+.projects {
+
+
+  .projects-body {
+    transition: all .3s ease-in-out;
+    .project-img {
+      img {
+        height: 275px;
+        object-fit: cover;
+        width: 100%;
+      }
+      &:hover {
+        .overlay {
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: all .3s ease-in-out;
+        }  
+      }
+    }
+  }
+}
+
+// Pricing CSS
+.pricing {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, $secondary-color 0%, $background-color2 100%);
+}
+
+// Review CSS
+.review {
+  background-image: url(../image/man-is-posing-for-photographer-with-photo-camera-2021-08-28-02-00-27-utc.jpg);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .overlay {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, $background-color1 0%, $secondary-color 100%);
+    opacity: 0.8;
+  }
+}
+
+//Blog CSS
+.blog {
+  .blog-body {
+    .blog-box {
+      .blog-image {
+        .overlay {
+          background-image: linear-gradient(0deg, rgba(0, 0, 0, .35), transparent 75%);
+          opacity: 1;
+          transition: all .3s ease-in-out;
+        }
+        &:hover {
+          .overlay {
+            opacity: 0;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+} 
+
+
+// Footer CSS
+footer {
+  .overlay {
+    opacity: 0.4;
+    background-image: url(../image/photo-im-motion-studio-shot-in-dark-studio-with-n-2021-08-30-07-44-07-utc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: $secondary-color;
+    mix-blend-mode: overlay;
+  }
+
+  input::placeholder {
+    color: #F7F7F7AA;
+  }
+}
+
+// Copyright
+
+.social-links {
+  i {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 5px 0px 5px 0px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background-color: $primary-color !important;
+      color: $white-color !important;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+
+/* ========================================= */
+
+/*     		      Index-2  CSS   			   	    */
+
+/* ======================================== */
+.home2 {
+
+  // Banner CSS
+  .banner {
+    height: 800px;
+    cursor: default; 
+    .overlay {
+      background-color: $secondary-color;
+      background-image: url(../image/focused-youngbg.jpg);
+      background-size: cover;
+      opacity: .3;
+    }
+  }
+
+  // Stats CSS
+  .stat {
+    .stat-right {
+
+      @media (max-width: 786px) {
+        .stat-box {
+          border-bottom: 1px solid $border-color1 ;
+          border-right: none !important;
+        }
+      }
+    }
+  }
+
+  // Services CSS
+  .services {
+    .services-left {
+      .service-box {
+        cursor: pointer;
+        .service-box-inner{
+          padding: 30px 20px;
+        }
+
+        .overlay{
+          transition: height .8s ease-in-out;
+        }
+
+        h4 a {
+          transition: all .3s ease-in-out;
+        }
+
+        .service-icon i{
+          height: 90px;
+          width: 90px;
+          font-size: 30px;
+          line-height: 90px;
+          transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+          .overlay{
+            height: 0;
+            transition: height .8s ease-in-out;
+          }
+          .service-icon i {
+            color: $primary-color;
+            transition: all .3s ease-in-out;
+            background-color: $secondary-color !important;
+          }
+          h4 a{
+            color: $white-color !important;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================================= */
+
+/*     		      Index-3  CSS   			   	    */
+
+/* ======================================== */
+.home3 {
+
+  // Banner CSS
+  .banner {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: default;
+    .overlay {
+      background-color: transparent;
+      background-image: linear-gradient(90deg, $background-color2 34%, #02010100 0%);
+      opacity: 1;
+    }
+    .banner-left {
+      h1 {
+        @media (min-width: 768px){
+          transform: rotate(270deg);
+          margin: 12% -70% 27% 0%;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 90px;
+        }
+      }
+
+      .overlay {
+        background-image: url(../image/photo-circle-01.png);
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  // Experience
+  .experience {
+
+    .overlay {
+      background-image: linear-gradient(90deg, $primary-color 33%, #00000000 0%);
+      opacity: 0.9;
+
+      @media (max-width: 1400px) {
+        background-image: linear-gradient(90deg, $primary-color 28%, #00000000 0%);
+      }
+
+      @media (max-width: 996px) {
+        background-image: none;
+      }
+    }
+  }
+
+  // Services 
+  .services {
+    .overlay{
+      background-color: transparent;
+      background-image: radial-gradient(at bottom right, $primary-color 0%, $background-color1 20%);
+      opacity: 0.5;
+    }
+  }
+
+  // Video Banner css
+  .video-banner {
+    background-image: url(../image/grunge-black.jpg);
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    .overlay {
+      background-image: linear-gradient(90deg, #00000000 40%, $background-color1 0%);
+    }
+
+    .playicon-wrapper {
+      a {
+
+        &::after , &::before {
+          content: " ";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          color: $primary-color;
+          border-radius: 50%;
+          -webkit-box-shadow: 0 0 0 0 $primary-color;
+          box-shadow: 0 0 0 0 $primary-color;
+          -webkit-animation: button-ripple 3s infinite;
+          animation: button-ripple 3s infinite;
+          opacity: .6;
+          z-index: -1;
+        }
+        i {
+          height: 80px;
+          width: 80px;
+          line-height: 80px;
+          font-size: 35px;
+          transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+          i {
+            background-color: $white-color !important;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  // Teams CSS
+  .teams {
+    .teams-body{
+      .team-box {
+
+         &:hover{
+          h4 {
+            color: $white-color;
+          }
+         }
+      }
+    }
+  }
+
+  // Review CSS
+  .review {
+    background-image: url(../image/young-beautiful-and-attractive-woman-with-short-ha-2022-01-19-00-21-19-utc.jpg);
+  }
+
+  // Contact CSS
+  .contact {
+    .contact-inner {
+      background-image: linear-gradient(180deg, #00000000 0%, $secondary-color 100%);
+    }
+
+    .contact-bottom {
+      .contact-box {
+        i {
+          height: 72px;
+          width: 72px;
+          line-height: 72px;
+          font-size: 32px;
+          transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+          i {
+            background-color: $white-color !important;
+            color: $primary-color;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+
+      @media (max-width: 996px){
+        .col-lg-4 {
+          &:nth-of-type(2) .contact-box{
+            border-right: 0 !important;
+          }
+          .contact-box {
+            border-bottom: 1px solid $border-color1;
+          }
+        }
+      }
+
+      @media (max-width: 786px) {
+        .col-lg-4 {
+          &:first-of-type .contact-box{
+            border-right: 0 !important;
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+
+/* ========================================= */
+
+/*     		   Services Page CSS   			 	    */
+
+/* ======================================== */
+
+.services1 {
+    .services-bottom {
+      .service-box {
+        cursor: pointer;
+        .service-box-inner{
+          padding: 30px 20px;
+        }
+
+        .overlay{
+          transition: height .8s ease-in-out;
+        }
+
+        h4 a {
+          transition: all .3s ease-in-out;
+        }
+
+        .service-icon i{
+          height: 90px;
+          width: 90px;
+          font-size: 30px;
+          line-height: 90px;
+          transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+          .overlay{
+            height: 0;
+            transition: height .8s ease-in-out;
+          }
+          .service-icon i {
+            color: $primary-color;
+            transition: all .3s ease-in-out;
+            background-color: $secondary-color !important;
+          }
+          h4 a{
+            color: $white-color !important;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+
+/* ========================================= */
+
+/*     		     Team Page CSS     			 	    */
+
+/* ======================================== */
+
+.team {
+  .team-box {
+    &::after {
+      width:100%;
+      position:absolute;
+      left:0;
+      transition: all ease-in-out .5s;
+      content:"";
+      height:100%; 
+      top: 0;
+    }
+
+    .box-content {
+      width:100%;
+      position:absolute;
+      left:0;
+      transform: translateY(100%); 
+      transition: transform .5s ease-out; 
+
+      .social-link li a {
+        width:30px;
+        height:30px;
+        line-height:30px;
+        background-color: #a1a1a1;
+        transition:all .3s ease-in-out;
+
+        &:hover {
+          background:#1DA1F2;
+          color: #fff;
+          i {
+            -webkit-animation: iconTranslateY .4s forwards; 
+            animation: iconTranslateY .4s forwards;
+          }
+
+        }
+      }
+      .social-link li:last-child a:hover{background:#E60023;}
+      .speaker-box .social-link li:first-child a:hover{background:#1877F2;}
+
+    }
+
+    &:hover {
+      &::after {
+        background:rgba(0,0,0,.7); 
+        transition: all ease-in-out .5s;
+        top: 0;
+      }
+
+      .box-content {
+        transform: translateY(-20px);
+      }
+    }
+  }
+}
+
+.about1 {
+  .about-left {
+    .about-img1 {
+      @media (min-width: 768px) {
+        margin-right: -200px;
+      }
+    }
+  }
+}
+
+
+/* ========================================= */
+
+/*         Career Detail Page CSS     	    */
+
+/* ======================================== */
+.career-detail {
+  .job-tabs {
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:hover {
+      border-color: $border-color1;
+      border-bottom: 1px solid $background-color1;
+      color: $primary-color !important;
+    }
+
+    .nav-tabs .nav-link:hover {
+      border-color: $border-color1;
+    }
+  }
+
+  .cv-box {
+    .cv-icon i{
+      height: 100px;
+      width: 100px;
+      font-size: 50px;
+      line-height: 100px;
+    }
+  }
+}
+
+
+/* ========================================= */
+
+/*               Faq Page CSS         	    */
+
+/* ======================================== */
+.faq-page {
+  .faq {
+    .faq-accordion {
+      .accordion-button:not(.collapsed) {
+        color: $primary-color !important;
+      }
+
+      .accordion-button::after{
+        background-image: none;
+        font-family: "FontAwesome";
+        content: "\f067"; 
+        font-weight: 200;
+      }
+
+      .accordion-button:not(.collapsed)::after {
+        content: "\f068"; 
+      }
+    }
+  }
+}
+
+/* ========================================= */
+
+/*            Testimonial Page CSS          */
+
+/* ======================================== */
+.testimonial {
+  .testimonials {
+    .overlay {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.5;
+      background-image: url(../image/testimonial-1-1.png);
+    } 
+  }
+}
+
+/* ========================================= */
+
+/*            Coming-soon Page CSS          */
+
+/* ======================================== */
+.coming-soon {
+  background-image: url(../image/portrait-of-a-young-european-girl-with-long-hair-i-2022-01-05-22-12-29-utc.JPG);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .overlay {
+    background-color: transparent;
+    background-image: linear-gradient(90deg, $background-color2 0%, $background-color1 100%);
+    opacity: 0.6;
+  }
+  .social-links li a {
+    i {
+      height: 40px;
+      width: 40px;
+      font-size: 16px;
+      line-height: 40px;
+
+      &:hover {
+        background-color: $primary-color !important;
+        color: $white-color;
+      }
+    }
+  }
+
+  @media (max-width: 995px) and (orientation: landscape) {
+      height: 200vh !important;
+  }
+
+  @media (max-width: 995px)
+  {
+    .coming-soon-inner {
+        width: 100% !important;
+      }
+  }
+}
+
+
+/* ========================================= */
+
+/*              Error Page CSS              */
+
+/* ======================================== */
+.error {
+  .breadcrumb {
+
+    height: 700px;
+    background-image:  url(../image/man-is-posing-for-photographer-with-photo-camera-2021-08-28-02-00-27-utc.jpg);
+    h1 {
+      font-size: 140px;
+    }
+  }
+}
+
+
+/* ========================================= */
+
+/*             Product List CSS             */
+
+/* ======================================== */
+.product-list  {
+  .product-gallery {
+    .gallery-image{
+      a {
+        .overlay {
+          opacity: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          width: 100% !important;
+          transition: all ease-in-out .3s;
+        }
+      }
+      &:hover {
+          .overlay {
+            opacity: 1;
+            transition: all ease-in-out .3s;
+          }
+        }
+    }
+  }
+}
+
+/* ========================================= */
+
+/*           Product Detail CSS             */
+
+/* ======================================== */
+.product-detail {
+  .product-detail-slide {
+    .slider-nav {
+      .slick-list {
+        padding: 0 !important;
+        .slick-track {
+          margin: 0 !important;
+          width: 100% !important;
+          display: flex;
+          justify-content:space-evenly;
+
+          .slick-slide  {
+            cursor: pointer;
+            position: relative;
+
+            &::after {
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              content: '';
+              top: 0;
+              background: #02010190;
+              z-index: 1;
+              opacity: 1;
+              transition: all ease-in-out .3s;
+            }
+
+            &:hover {
+              &::after {
+                opacity: 0;
+                transition: all ease-in-out .3s;
+              }
+            }
+          }
+
+          .slick-slide.slick-current{
+            &::after {
+              opacity: 0;
+              transition: all ease-in-out .3s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.product-review {
+  .nav-tabs .nav-link.active {
+    background-color: $background-color2 !important;
+  }
+}
+
+/* ========================================= */
+
+/*           Portfolio Page CSS             */
+
+/* ======================================== */
+
+.portfolio-page {
+  .portfolio {
+    .portfolio-box {
+      transition: all .3s ease-in-out;
+      &:hover {
+        border-color:  $grey-color !important;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+}
+
+/* ========================================= */
+
+/*          Portfolio Detail CSS            */
+
+/* ======================================== */
+.portfolio-detail-page {
+  .breadcrumb {
+    height: 600px;
+    background-image: url(../image/wedding.jpg);
+  }
+}
+
+/* ========================================= */
+
+/*           Homepage4 Page CSS             */
+
+/* ======================================== */
+.home4 {
+  .banner {
+    cursor: auto;
+    .banner-spin:hover .spin-demo-main i {
+      color: $primary-color;
+      transition: all ease-in-out 0.5s;
+    }
+
+    .spin-demo-main {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      cursor: pointer;
+    }
+
+    .spin-demo-main i {
+      position: absolute;
+      font-size: 25px;
+      color: #fff;
+      transition: all ease-in-out 0.5s;
+    }
+
+    .spin-demo-main #rotatingText {
+      animation-name: rotate-circle;
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .spin-demo-main .text {
+      font-weight: 400;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      fill: #fff;
+      font-size: 22px;
+    }
+
+    @keyframes rotate-circle {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+  }
+  
+  .services {
+    background-image: none;
+    .service-box {
+        cursor: pointer;
+        .service-box-inner{
+          padding: 30px;
+        }
+
+        .overlay{
+          transition: height .8s ease-in-out;
+        }
+
+        h4 a {
+          transition: all .3s ease-in-out;
+        }
+
+        .service-icon i{
+          height: 70px;
+          width: 70px;
+          font-size: 30px;
+          line-height: 70px;
+          transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+          .service-icon i {
+            color: $primary-color;
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+  }
+
+  .about {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #161F24 0%, #0E1316 100%);
+  }
+
+  .process {
+    .process-body {
+      .process-box{
+        .process-number {
+          .h1 {
+            font-size: 150px;
+            transition: all .3s ease-in-out;
+          }
+        }
+        &:hover {
+          .process-number {
+            .h1 {
+              color: $primary-color !important;
+              transition: all .3s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio {
+    background-color: transparent;
+    background-image: linear-gradient(360deg, #161F24 0%, #0E1316 100%);
+  }
+
+  .review {
+    background-color: transparent;
+    background-image: linear-gradient(360deg, #161F24 0%, #0E1316 100%);
+    background-attachment: scroll;
+    .review-box {
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+    }
+    .slick-dots {
+      bottom: -35px;
+    }
+    .slick-dots li.slick-active button:before {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+
+  .ad-banner {
+    .ad-banner-inner {
+      .overlay {
+        background-image: url(../image/background-pattern.png);
+        opacity: .08;
+        background-position: center;
+        background-size: 80%;
+      }
+    }
+    .camera-tripod {
+      right: 13%;
+    }
+    .camera-girl{
+      left: 8%;
+    }
+  }
+
+  .pricing {
+    .slick-prev, .slick-next {
+      background-color: $primary-light-color;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-box-right {
+        border: none !important;
+      }
+    }
+  }
+
+  .contact {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #161F24 0%, #0E1316 100%);
+  }
+
+  .blog {
+    .blog-box {
+      .overlay {
+        background: #000000;
+        background: linear-gradient(0deg,rgba(0, 0, 0, .8) 10%, rgba(0, 0, 0, 0) 80%);
+      }
+    }
+  }
+}
+
+/* ========================================= */
+
+/*           Client Gallery CSS             */
+
+/* ======================================== */
+.client-gallery {
+  .nav-tabs .nav-link.active {
+    background-color: $primary-color !important;
+  }
+
+  /* Masonry container */
+    .gallery {
+      column-count: 4;
+      column-gap: 15px;
+
+      a {
+        display: inline-block;
+        margin-bottom: 15px;
+        position: relative;
+        overflow: hidden;
+
+        .overlay {
+          background-color: #02010150;
+          height: 100%;
+          opacity: 0;
+          z-index: 1;
+          left: 0;
+          transition: all .3s ease-in-out;
+        }
+
+        img {
+        width: 100%;
+        transition: transform 0.3s ease;
+        // display: block;
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+      }
+
+        &:hover{
+          .overlay {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+          }
+          .play-icon {
+            background: $primary-light-color;
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+          img {
+            transform: scale(1.05);
+          }
+        } 
+      }
+
+    }
+
+    .video-gallery {
+      column-count: 3;
+    }
+
+    @media (max-width: 992px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
+}
